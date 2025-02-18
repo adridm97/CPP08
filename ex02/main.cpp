@@ -6,11 +6,12 @@
 /*   By: adrian <adrian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 18:54:08 by adrian            #+#    #+#             */
-/*   Updated: 2025/02/17 19:03:34 by adrian           ###   ########.fr       */
+/*   Updated: 2025/02/18 16:40:26 by adrian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
+#include <list>
 
 int main()
 {
@@ -33,6 +34,24 @@ int main()
     {
         std::cout << " " << *it;
         ++it;
+    }
+    std::cout << std::endl;
+
+    std::cout << "Prueba con std::list" << std::endl;
+    std::list<int> lst;
+    lst.push_back(1);
+    lst.push_back(7);
+    lst.pop_back();
+    lst.push_back(3);
+    lst.push_back(10);
+    lst.push_back(100);
+    std::list<int>::iterator lit = lst.begin();
+    std::list<int>::iterator lite = lst.end();
+    std::cout << "Elementos en std::list: ";
+    while (lit != lite)
+    {
+        std::cout << " " << *lit;
+        ++lit;
     }
     std::cout << std::endl;
     return(0);
